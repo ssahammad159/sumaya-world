@@ -1,0 +1,769 @@
+/* =========================================
+   SUMAYA WORLD
+   MAIN STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #0f0f14;
+    --card: #181822;
+    --card2: #20202c;
+    --text: #ffffff;
+    --muted: #9b9ba8;
+    --border: #343442;
+    --pink: #ff2d68;
+    --orange: #ff7043;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   SPLASH
+========================================= */
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: splashHide 1s ease 1.8s forwards;
+}
+
+.splash-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.splash-screen h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.splash-screen p {
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+@keyframes splashHide {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.auth-screen {
+    min-height: 100vh;
+    padding: 55px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-logo i {
+    font-size: 65px;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.auth-logo h1 {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.auth-logo p {
+    color: var(--muted);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 16px;
+    border-radius: 15px;
+    background: var(--card);
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.tab-btn.active {
+    color: white;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    border-color: transparent;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    outline: none;
+    background: var(--card);
+    color: white;
+    font-size: 17px;
+}
+
+.auth-form input:focus {
+    border-color: var(--pink);
+}
+
+.auth-form input::placeholder {
+    color: #777784;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app-wrapper {
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.app-header {
+    height: 65px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: bold;
+}
+
+.brand i {
+    font-size: 25px;
+    color: var(--pink);
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.header-actions button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--card2);
+    color: white;
+}
+
+
+/* =========================================
+   VIEWS
+========================================= */
+
+.view {
+    display: none;
+    padding: 20px 15px;
+}
+
+.view.active {
+    display: block;
+}
+
+.welcome-section {
+    padding: 10px 3px 22px;
+}
+
+.welcome-section h2 {
+    font-size: 22px;
+}
+
+.welcome-section p {
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+.page-title {
+    margin-bottom: 25px;
+}
+
+.page-title h2 {
+    font-size: 25px;
+}
+
+
+/* =========================================
+   STORIES
+========================================= */
+
+.section-title {
+    margin-bottom: 13px;
+}
+
+.stories {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.story {
+    min-width: 68px;
+    text-align: center;
+}
+
+.story-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bg);
+}
+
+.add-story .story-circle {
+    color: white;
+    font-size: 23px;
+}
+
+.story span {
+    display: block;
+    font-size: 12px;
+    margin-top: 7px;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   QUICK POST
+========================================= */
+
+.quick-post {
+    margin: 18px 0;
+    padding: 14px;
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.quick-post input {
+    width: 100%;
+    background: var(--card2);
+    border: 0;
+    outline: none;
+    color: white;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.quick-post .primary-btn {
+    padding: 13px;
+}
+
+
+/* =========================================
+   POST
+========================================= */
+
+.post {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-user img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-user div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.post-user small {
+    color: var(--muted);
+}
+
+.post-menu {
+    background: transparent;
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.post-content {
+    padding: 5px 15px 18px;
+    line-height: 1.5;
+}
+
+.post-actions {
+    border-top: 1px solid var(--border);
+    display: flex;
+}
+
+.post-actions button {
+    flex: 1;
+    padding: 14px 5px;
+    background: transparent;
+    color: var(--muted);
+}
+
+.post-actions button:active {
+    color: var(--pink);
+}
+
+
+/* =========================================
+   REELS
+========================================= */
+
+.reels-placeholder {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.reels-placeholder i {
+    font-size: 60px;
+    color: var(--pink);
+    margin-bottom: 20px;
+}
+
+.reels-placeholder p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+
+/* ==================================================
+   CREATE
+================================================== */
+
+.create-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+#create-text {
+    width: 100%;
+    min-height: 140px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    color: white;
+    font-size: 16px;
+    resize: vertical;
+    outline: none;
+}
+
+#create-text::placeholder {
+    color: var(--muted);
+}
+
+.create-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.create-buttons button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.create-buttons button:active {
+    transform: scale(0.98);
+}
+
+.media-preview {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.post-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    background: var(--pink);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-button:active {
+    transform: scale(0.98);
+}
+/* =========================================
+   MESSAGES
+========================================= */
+
+.empty-state {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 55px;
+    color: var(--pink);
+    margin-bottom: 20px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-header {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.profile-header h2 {
+    margin-top: 15px;
+}
+
+.profile-header p {
+    color: var(--muted);
+    margin: 8px 0 18px;
+}
+
+.secondary-btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: var(--card);
+    color: white;
+    border: 1px solid var(--border);
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 5px;
+    background: var(--card);
+    border-radius: 16px;
+}
+
+.profile-stats div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-stats span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 72px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 500;
+}
+
+.nav-btn {
+    background: transparent;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+}
+
+.nav-btn i {
+    font-size: 21px;
+}
+
+.nav-btn.active {
+    color: var(--pink);
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        max-width: 480px;
+        margin: auto;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+    }
+
+    .bottom-nav {
+        max-width: 480px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+/* =========================
+   SUMAYA WORLD REELS
+   ========================= */
+
+.reel-card {
+    background: #191923;
+    border: 1px solid #343442;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.reel-video {
+    height: 430px;
+    background: linear-gradient(145deg, #ff1768, #ff7043, #5427a8);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.reel-video::before {
+    content: "SUMAYA";
+    position: absolute;
+    font-size: 70px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.12);
+    transform: rotate(-15deg);
+}
+
+.reel-play {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding-left: 5px;
+    z-index: 2;
+}
+
+.reel-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.reel-info {
+    padding: 16px;
+}
+
+.reel-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.reel-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1768, #ff7043);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reel-info p {
+    color: #eeeeee;
+    font-size: 15px;
+    margin: 8px 0 14px;
+}
+
+.reel-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.reel-actions button {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    background: #252532;
+    color: #eeeeee;
+    padding: 10px 5px;
+    font-size: 13px;
+}
+
+.reel-actions button:active {
+    transform: scale(0.96);
+}
+
+.reel-actions button.active {
+    background: #ff1768;
+    color: white;
+}

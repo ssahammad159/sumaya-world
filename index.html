@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SUMAYA WORLD</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= SPLASH ================= -->
+<div id="splash-screen" class="splash-screen">
+    <div class="splash-logo">
+        <i class="fa-solid fa-globe"></i>
+    </div>
+
+    <h1>SUMAYA WORLD</h1>
+    <p>Your World. Your People.</p>
+</div>
+
+
+<!-- ================= LOGIN ================= -->
+<section id="auth-screen" class="auth-screen">
+
+    <div class="auth-logo">
+        <i class="fa-solid fa-globe"></i>
+        <h1>SUMAYA WORLD</h1>
+        <p>Your World. Your People.</p>
+    </div>
+
+    <div class="auth-tabs">
+
+        <button
+            id="login-tab"
+            class="tab-btn active"
+            type="button">
+            Login
+        </button>
+
+        <button
+            id="signup-tab"
+            class="tab-btn"
+            type="button">
+            Sign Up
+        </button>
+
+    </div>
+
+
+    <!-- LOGIN FORM -->
+    <form
+        id="login-form"
+        class="auth-form"
+onsubmit="event.preventDefault(); document.getElementById('auth-screen').style.display='none'; document.getElementById('app-wrapper').classList.remove('hidden'); document.querySelectorAll('.view').forEach(v => v.classList.remove('active')); document.getElementById('home-view').classList.add('active');">
+
+        <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            autocomplete="email"
+            required>
+
+        <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
+
+        <button
+            id="login-button"
+            type="submit"
+            class="primary-btn">
+
+            Enter World
+
+        </button>
+
+    </form>
+
+
+    <!-- SIGNUP FORM -->
+    <form
+        id="signup-form"
+        class="auth-form hidden">
+
+        <input
+            id="signup-name"
+            type="text"
+            placeholder="Your Name"
+            required>
+
+        <input
+            id="signup-email"
+            type="email"
+            placeholder="Email Address"
+            required>
+
+        <input
+            id="signup-password"
+            type="password"
+            placeholder="Create Password"
+            required>
+
+        <button
+            type="submit"
+            class="primary-btn">
+
+            Create Account
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= MAIN APP ================= -->
+<div id="app-wrapper" class="app-wrapper hidden">
+
+    <!-- HEADER -->
+    <header class="app-header">
+
+        <div class="brand">
+            <i class="fa-solid fa-globe"></i>
+            <span>SUMAYA WORLD</span>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                id="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button
+                type="button"
+                id="notification-button">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <main id="home-view" class="view active">
+
+        <section class="welcome-section">
+
+            <h2>Welcome to SUMAYA WORLD 🌍</h2>
+
+            <p>
+                Your World. Your People.
+            </p>
+
+        </section>
+
+
+        <!-- STORIES -->
+        <section class="stories-section">
+
+            <div class="section-title">
+                <h3>Stories</h3>
+            </div>
+
+            <div class="stories">
+
+                <div class="story add-story">
+                    <div class="story-circle">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <span>Your Story</span>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">
+                        <img
+                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150"
+                            alt="Story">
+                    </div>
+                    <span>Alex</span>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">
+                        <img
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
+                            alt="Story">
+                    </div>
+                    <span>Sarah</span>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"
+                            alt="Story">
+                    </div>
+                    <span>John</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE POST -->
+        <section class="quick-post">
+
+            <input
+                id="quick-post-input"
+                type="text"
+                placeholder="What's on your mind?">
+
+            <button
+                id="quick-post-button"
+                type="button"
+                class="primary-btn">
+
+                Post
+
+            </button>
+
+        </section>
+
+
+        <!-- POSTS -->
+        <section id="posts-container">
+
+            <article class="post">
+
+                <div class="post-header">
+
+                    <div class="post-user">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100"
+                            alt="User">
+
+                        <div>
+                            <strong>Alex</strong>
+                            <small>Just now</small>
+                        </div>
+
+                    </div>
+
+                    <button class="post-menu">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="post-content">
+
+                    <p>
+                        Welcome to my new world on SUMAYA WORLD 🌍
+                    </p>
+
+                </div>
+
+
+                <div class="post-actions">
+
+                    <button class="like-btn">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Like</span>
+                    </button>
+
+                    <button class="comment-btn">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>Comment</span>
+                    </button>
+
+                    <button class="share-btn">
+                        <i class="fa-solid fa-share"></i>
+                        <span>Share</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= REELS ================= -->
+    <main id="reels-view" class="view">
+<div class="page-title">
+    <h2>Reels</h2>
+</div>
+
+<div class="reel-card">
+
+    <div class="reel-video">
+        <div class="reel-play"onclick="this.classList.toggle('playing'); this.innerHTML = this.classList.contains('playing') ? '❚❚' : '▶';">
+    ▶
+</div>>▶
+        <div class="reel-label">SUMAYA REEL</div>
+    </div>
+
+    <div class="reel-info">
+        <div class="reel-user">
+            <div class="reel-avatar">A</div>
+            <strong>Alex</strong>
+        </div>
+
+        <p>Welcome to my first SUMAYA Reel! 🌍</p>
+
+        <div class="reel-actions">
+            <button type="button" onclick="this.classList.toggle('active')">
+                ❤️ Like
+            </button>
+
+            <button type="button">
+                💬 Comment
+            </button>
+
+            <button type="button">
+                ↗️ Share
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="reel-card">
+
+    <div class="reel-video">
+        <div class="reel-play"<div class="reel-play"
+     onclick="this.classList.toggle('playing'); this.innerHTML = this.classList.contains('playing') ? '❚❚' : '▶';">▶</div>
+        <div class="reel-label">SUMAYA REEL</div>
+    </div>
+
+    <div class="reel-info">
+        <div class="reel-user">
+            <div class="reel-avatar">S</div>
+            <strong>Sarah</strong>
+        </div>
+
+        <p>Good vibes from SUMAYA WORLD ✨</p>
+
+        <div class="reel-actions">
+            <button type="button" onclick="this.classList.toggle('active')">
+                ❤️ Like
+            </button>
+
+            <button type="button">
+                💬 Comment
+            </button>
+
+            <button type="button">
+                ↗️ Share
+            </button>
+        </div>
+    </div>
+
+</div>
+           </main>
+
+
+    <!-- ================= CREATE ================= -->
+    <main id="create-view" class="view">
+ <div class="page-title">
+    <h2>Create</h2>
+</div>
+
+<div class="create-box">
+    <textarea id="create-text" placeholder="What's on your mind?"></textarea>
+
+    <div class="create-buttons">
+        <button type="button" onclick="createPost()">
+            📝 Create Post
+        </button>
+
+        <button type="button" onclick="createPhoto()">
+            🖼️ Photo
+        </button>
+
+        <button type="button" onclick="createVideo()">
+            🎥 Video
+        </button>
+    </div>
+
+    <div id="create-preview" class="media-preview"></div>
+
+    <button type="button" class="post-button" onclick="publishPost()">
+        Post
+    </button>
+</div>       
+</main>
+            <!-- ================= MESSAGES ================= -->
+    <main id="messages-view" class="view">
+
+        <div class="page-title">
+            <h2>Messages</h2>
+        </div>
+
+        <div class="empty-state">
+
+            <i class="fa-regular fa-message"></i>
+
+            <h3>Your Messages</h3>
+
+            <p>
+                Start a conversation with your people.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= PROFILE ================= -->
+    <main id="profile-view" class="view">
+
+        <div class="profile-header">
+
+            <div class="profile-picture">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <h2 id="profile-name">SS AHAMMAD</h2>
+
+            <p id="profile-bio">
+                Welcome to my SUMAYA WORLD 🌍
+            </p>
+
+            <button
+                id="edit-profile-button"
+                type="button"
+                class="secondary-btn">
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+
+        <div class="profile-stats">
+
+            <div>
+                <strong>0</strong>
+                <span>Posts</span>
+            </div>
+
+            <div>
+                <strong>0</strong>
+                <span>Followers</span>
+            </div>
+
+            <div>
+                <strong>0</strong>
+                <span>Following</span>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <nav class="bottom-nav">
+
+    <button class="nav-btn active" type="button"
+        onclick="showPage('home-view', this)">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </button>
+
+    <button class="nav-btn" type="button"
+        onclick="showPage('reels-view', this)">
+        <i class="fa-solid fa-clapperboard"></i>
+        <span>Reels</span>
+    </button>
+
+    <button class="nav-btn" type="button"
+        onclick="showPage('create-view', this)">
+        <i class="fa-solid fa-plus"></i>
+        <span>Create</span>
+    </button>
+
+    <button class="nav-btn" type="button"
+        onclick="showPage('messages-view', this)">
+        <i class="fa-regular fa-message"></i>
+        <span>Messages</span>
+    </button>
+
+    <button class="nav-btn" type="button"
+        onclick="showPage('profile-view', this)">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+    </button>
+
+</nav>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function showPage(pageId, button) {
+    document.querySelectorAll(".view").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+
+    document.querySelectorAll(".nav-btn").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
